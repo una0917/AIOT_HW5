@@ -543,18 +543,17 @@ def main():
             with col_viz2:
                 st.markdown("**句長分布分析**")
                 text = prediction['text']
-                sentences = st.session_state.detector_model.extractor.__class__.__bases__[0] if hasattr(st.session_state.detector_model.extractor, '__bases__') else None
-                
+
                 # 計算句長分布
                 sentences = split_sentences(text)
                 sentence_lengths = [len(tokenize(sent.lower())) for sent in sentences]
-                
-                  fig, ax = plt.subplots(figsize=(8, 5))
-                  ax.hist(sentence_lengths, bins=max(5, len(set(sentence_lengths))), 
-                      color='#FF6B6B', alpha=0.7, edgecolor='black')
-                  ax.set_xlabel('Sentence length (tokens)', fontweight='bold')
-                  ax.set_ylabel('Frequency', fontweight='bold')
-                  ax.set_title('Sentence length distribution', fontweight='bold')
+
+                fig, ax = plt.subplots(figsize=(8, 5))
+                ax.hist(sentence_lengths, bins=max(5, len(set(sentence_lengths))),
+                        color='#FF6B6B', alpha=0.7, edgecolor='black')
+                ax.set_xlabel('Sentence length (tokens)', fontweight='bold')
+                ax.set_ylabel('Frequency', fontweight='bold')
+                ax.set_title('Sentence length distribution', fontweight='bold')
                 ax.grid(alpha=0.3)
                 plt.tight_layout()
                 st.pyplot(fig, use_container_width=True)
