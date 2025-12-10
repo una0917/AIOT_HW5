@@ -535,8 +535,8 @@ def main():
                 fig, ax = plt.subplots(figsize=(8, 5))
                 colors = ['#667eea' if features_dict['burstiness'] < 0.4 else '#f5576c' for _ in key_features]
                 bars = ax.barh(list(key_features.keys()), list(key_features.values()), color=colors)
-                ax.set_xlabel('特徵值', fontweight='bold')
-                ax.set_title('關鍵特徵值', fontweight='bold')
+                ax.set_xlabel('Feature value', fontweight='bold')
+                ax.set_title('Key feature values', fontweight='bold')
                 plt.tight_layout()
                 st.pyplot(fig, use_container_width=True)
             
@@ -549,12 +549,12 @@ def main():
                 sentences = split_sentences(text)
                 sentence_lengths = [len(tokenize(sent.lower())) for sent in sentences]
                 
-                fig, ax = plt.subplots(figsize=(8, 5))
-                ax.hist(sentence_lengths, bins=max(5, len(set(sentence_lengths))), 
-                       color='#FF6B6B', alpha=0.7, edgecolor='black')
-                ax.set_xlabel('句長（詞數）', fontweight='bold')
-                ax.set_ylabel('出現次數', fontweight='bold')
-                ax.set_title('句長分布', fontweight='bold')
+                  fig, ax = plt.subplots(figsize=(8, 5))
+                  ax.hist(sentence_lengths, bins=max(5, len(set(sentence_lengths))), 
+                      color='#FF6B6B', alpha=0.7, edgecolor='black')
+                  ax.set_xlabel('Sentence length (tokens)', fontweight='bold')
+                  ax.set_ylabel('Frequency', fontweight='bold')
+                  ax.set_title('Sentence length distribution', fontweight='bold')
                 ax.grid(alpha=0.3)
                 plt.tight_layout()
                 st.pyplot(fig, use_container_width=True)

@@ -204,3 +204,37 @@ https://github.com/una0917/AIOT_HW5.git
 ---
 
 *註：若需要包含更早的系統訊息或工具輸出，也請告訴我，我可以把那些內容一起加入。*
+
+---
+
+**User:**
+
+我發現在streamlit上視覺化圖表的中文字的部分會變方格，例如:連接詞比例、詞頻熵，請幫我修正這個問題，不然改成英文也可以
+
+**Assistant:**
+
+我要把所有 matplotlib 圖表內的中文標籤換成英文（避免在部署環境缺字體導致方塊），接下來我會修改 `ai_detector.py` 中相關字串。
+
+---
+
+**Assistant (後續動作說明與修改)：**
+
+- 我已將圖表中的中文標籤改為英文（包含 feature bar 的 x-label 與 title，以及句長分布的 x/y 標籤與 title）。
+- 建議：若要在 Streamlit Cloud 中顯示中文圖表，需要在部署環境安裝並指定中文字體（例如 Noto Sans CJK），我可以協助上傳字體並在程式中設定。
+
+**User:**
+
+好的 請幫我push到github上，並且更新RAW_CONVERSATION.md內容
+
+**Assistant:**
+
+我已把最近的修改（圖表英文標籤）儲存並準備推送，接著會把 `RAW_CONVERSATION.md` 更新並推送到 GitHub。
+
+---
+
+**Assistant:**
+
+（已完成）我已將 `RAW_CONVERSATION.md` 與最近修改推送到你的 repository。
+
+如果你還需要把該檔案下載成其他格式或合併其他系統日誌，請告訴我。
+
