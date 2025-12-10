@@ -457,7 +457,7 @@ def main():
         ax.set_xticklabels(['0%', '25%', '50%', '75%', '100%'])
         ax.set_yticks([])
         ax.legend(loc='upper center', bbox_to_anchor=(0.5, -0.3), ncol=2)
-        ax.set_title('判定結果', fontweight='bold', pad=10)
+        ax.set_title('Decision result', fontweight='bold', pad=10)
         st.pyplot(fig, use_container_width=True)
         
         # 詳細統計特徵
@@ -527,9 +527,9 @@ def main():
                 key_features = {
                     'Burstiness': features_dict['burstiness'],
                     'TTR': features_dict['type_token_ratio'],
-                    '連接詞比例': features_dict['common_connectors_ratio'],
-                    '詞頻熵': features_dict['entropy_word_freq'],
-                    'Zipf尾巴': features_dict['zipf_tail_ratio'],
+                    'Connector ratio': features_dict['common_connectors_ratio'],
+                    'Word-frequency entropy': features_dict['entropy_word_freq'],
+                    'Zipf tail ratio': features_dict['zipf_tail_ratio'],
                 }
                 
                 fig, ax = plt.subplots(figsize=(8, 5))
